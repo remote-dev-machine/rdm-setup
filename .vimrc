@@ -1,6 +1,3 @@
-" Set 7 lines to the cursor - when moving vertically using j/k
-set so=7
-
 "Always show current position
 set ruler
 
@@ -24,5 +21,7 @@ set tabstop=4
 colorscheme monokai
 set t_Co=256  " vim-monokai now only support 256 colours in terminal.
 
-set showcmd   " show command in bottom bar
+execute pathogen#infect()
+call pathogen#helptags()
 
+map <space>m :NERDTreeToggle <CR> 
