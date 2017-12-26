@@ -25,7 +25,6 @@ call plug#end()
 
 " material-monokai theme settings
 " https://github.com/skielbasa/vim-material-monokai
-set background=dark
 colorscheme material-monokai
 
 " Tabs and spaces
@@ -59,4 +58,29 @@ nnoremap ff :Ack<space>
 " :set mouse=a
 
 " Toggle NerdTree
-:set nonumber
+nnoremap <silent> \\ :NERDTreeToggle<CR>
+
+" Syntax highlighting
+syntax on
+
+" Syntastic config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_es6_checkers = ['eslint']
+let g:syntastic_js_checkers = ['eslint']
+
+" Es6 files as javascript files
+au BufNewFile,BufRead *.es6 set filetype=javascript
+
+" Use system clipboard to copy
+set clipboard=unnamedplus
+
+" Allow CTRLP to search in deeply nested folders
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
