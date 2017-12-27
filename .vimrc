@@ -9,7 +9,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'skielbasa/vim-material-monokai'
 
 " https://github.com/ctrlpvim/ctrlp.vim
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 
 " https://github.com/yegappan/grep
 Plug 'yegappan/grep'
@@ -40,6 +40,12 @@ Plug 'elzr/vim-json'
 
 " Goyo, minimal vim
 Plug 'junegunn/goyo.vim'
+
+" Fuzzy find using fzf
+Plug '/usr/local/opt/fzf'
+
+" Auto pair brackets
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
@@ -122,6 +128,9 @@ nmap <Leader><space> :nohlsearch<return>
 " Map Ctrl-Shift-F Ack search
 nmap ff :Ack<space>
 
+" Map FZF search to space space 
+nmap <space><space> :FZF<CR>
+
 " Toggle NerdTree
 nmap <silent> <Leader><Leader> :NERDTreeToggle<CR>
 
@@ -138,7 +147,7 @@ nmap ¬ <C-W><C-L>
 nmap ≥ <C-W><C-W>
 
 " Map space key double press to open ctrl-p
-let g:ctrlp_map = '<space><space>'
+" let g:ctrlp_map = '<space><space>'
 
 " Git shortcuts, need Fugitive installed to work
 nmap <silent> gs :Gstatus<CR>
@@ -166,14 +175,17 @@ let g:syntastic_es6_checkers = ['eslint']
 let g:syntastic_js_checkers = ['eslint']
 
 " Ctrl-P >> Allow CTRLP to search in deeply nested folders
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=6
+" let g:ctrlp_max_files=0
+" let g:ctrlp_max_depth=6
 
 " NERDTree >> Show hidden files
 let g:NERDTreeShowHidden=1
 
-" Goyo Config
+" Goyo >> Config
 function! s:goyo_enter()
   set number
 endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
+
+" Ack >> Don't print on terminal
+set shellpipe=>
