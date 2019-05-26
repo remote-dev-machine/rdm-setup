@@ -10,6 +10,24 @@ Steps to setup a remote dev environment to code on the go.
 - Change hostname in remote machine to something easy to remember (e.g. DevMachine)
 - Add the new hostname in local machine's `/etc/hosts` like `xx.xxx.xxx.xxx DevMachine`
 
+## Setup Mosh (used instead of SSH)
+- Install Mosh on both client and remote
+```
+sudo apt-get install mosh
+# brew install mosh
+```
+- Update firewall on remote server to accept UDP connection from Mosh
+```
+sudo ufw allow 60000:61000/udp
+```
+- If there is a locale error, use this on remote server
+```
+sudo apt-get update
+sudo apt-get install -y locales
+sudo locale-gen "en_US.UTF-8"
+sudo update-locale LC_ALL="en_US.UTF-8"
+```
+
 ## Setup ZSH shell
 - Install ZSH
 ```
