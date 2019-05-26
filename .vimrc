@@ -197,6 +197,10 @@ let g:syntastic_js_checkers = ['eslint']
 " NERDTree >> Show hidden files
 let g:NERDTreeShowHidden=1
 
+" NERDTree arrows config
+let g:NERDTreeDirArrowExpandable="+"
+let g:NERDTreeDirArrowCollapsible="~"
+
 " NERDTree Mac Vim ^G issue
 " https://stackoverflow.com/questions/53657545/nerdtree-g-before-folder-and-file-names-osx-terminal-vim
 let g:NERDTreeNodeDelimiter = "\u00a0"
