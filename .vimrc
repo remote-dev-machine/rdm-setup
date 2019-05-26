@@ -52,7 +52,10 @@ Plug 'elzr/vim-json'
 Plug 'junegunn/goyo.vim'
 
 " Fuzzy find using fzf
-Plug '/usr/local/opt/fzf'
+" Uncomment the following for mac if fzf is already installed
+" Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+Plug 'junegunn/fzf.vim'
 
 " Auto pair brackets
 Plug 'jiangmiao/auto-pairs'
