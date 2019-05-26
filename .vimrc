@@ -57,6 +57,12 @@ Plug '/usr/local/opt/fzf'
 " Auto pair brackets
 Plug 'jiangmiao/auto-pairs'
 
+" Format styled-components
+Plug 'styled-components/vim-styled-components'
+
+" Auto run prettier
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
 call plug#end()
 
 
@@ -199,3 +205,7 @@ autocmd! User GoyoEnter nested call <SID>goyo_enter()
 
 " Ack >> Don't print on terminal
 set shellpipe=>
+
+" Prettier auto run on save
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
