@@ -70,7 +70,6 @@ git clone git@github.com:nishantdania/devmachine.git
 ```
 cp ~/devmachine/.vimrc ~/.vimrc
 source ~/.vimrc
-rm -rf vimrc
 ```
 - Make Vim the default editor
 ```
@@ -78,4 +77,15 @@ sudo update-alternatives --config editor
 ```
 - Install new plugins >> Open vim using `vi`. It should start downloading the required packages. If it does not, using `:PlugInstall`
 
-That's it !
+## Setup tmux
+- Install tmux
+```
+sudo apt-get install tmux
+```
+- Add tmux config
+```
+cp ~/devmachine/.tmux.conf ~/.tmux.conf
+source ~/.tmux.conf
+```
+
+**That's it !**
