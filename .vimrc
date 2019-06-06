@@ -136,6 +136,8 @@ set splitright                "And to the right. This feels more natural.
 " Visual complete for command menu
 set wildmenu
 
+" Set relative numbers
+set rnu
 
 " -----------------------------------
 "   Key Map Settings 
