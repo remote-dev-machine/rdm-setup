@@ -6,7 +6,7 @@
 set nocompatible
 
 " Set a global <Leader>
-let leader = "/<Space>"
+let mapleader = "\<Space>"
 
 " Source config files from /configFiles and /plugins
 " Symlink the current directory to .vim
