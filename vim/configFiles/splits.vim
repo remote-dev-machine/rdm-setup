@@ -17,3 +17,9 @@ nnoremap <leader>- :sp<CR>
 " Close other splits
 nnoremap <leader>o :only<CR> 
 
+" Open new split panes to right and bottom
+set splitbelow
+set splitright
+
+" Re-balance splits on vim resize
+autocmd VimResized * :wincmd =
