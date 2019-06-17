@@ -8,11 +8,17 @@ augroup END
 set relativenumber
 set numberwidth=5
 
-" Escape out of insert mode with jk or kj 
+" Escape out of insert and visual mode with jk or kj 
 inoremap jk <Esc>
 inoremap kj <Esc>
 vnoremap jk <Esc>
 vnoremap kj <Esc>
+
+" Escape command mode
+cnoremap <leader>a <C-c>
+
+"Easier way to enter command mode
+nnoremap <leader>; :
 
 " Stop using arrow keys
 nnoremap <Left> <nop>
@@ -34,3 +40,6 @@ nnoremap <leader>q :q<CR>
 set textwidth=80
 set colorcolumn=+1
 highlight ColorColumn ctermbg=yellow
+
+" Clear search highlight
+nnoremap <silent> <leader>h :nohls<CR>

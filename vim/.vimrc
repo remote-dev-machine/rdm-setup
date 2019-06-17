@@ -20,4 +20,18 @@ function! s:SourceConfigFilesFrom(directory)
 	endfor
 endfunction
 
-call s:SourceConfigFilesFrom('configFiles')
+" Auto install Plug
+" https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Load plugins with configs
+call plug#begin('~/.vim/plugged')
+call s:SourceConfigFilesFrom('pluginConfigs')
+call plug#end()
+
+" Load config for native vim commands
+call s:SourceConfigFilesFrom('vimNativeConfigs')
