@@ -36,11 +36,6 @@ set expandtab
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 
-" Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
-highlight ColorColumn ctermbg=yellow
-
 " Clear search highlight
 nnoremap <silent> <leader>n :nohls<CR>
 
