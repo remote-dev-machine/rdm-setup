@@ -6,9 +6,4 @@
 "     \ https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim 
 " endif
 
-" syntax enable
-" colorscheme monokai
-
 Plug 'dracula/vim', { 'as': 'dracula' }
-syntax on
-color dracula
