@@ -43,3 +43,7 @@ highlight ColorColumn ctermbg=yellow
 
 " Clear search highlight
 nnoremap <silent> <leader>h :nohls<CR>
+
+" Page down and page up
+nnoremap <C-j> <C-f>
+nnoremap <C-k> <C-b>

@@ -2,4 +2,4 @@
 
 Plug 'mileszs/ack.vim'
 
-nnoremap <leader><leader> :Ack<space>
+nnoremap <C-f> :Ack<space>
