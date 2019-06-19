@@ -1,4 +1,4 @@
-Plug 'junegunn/vim-easy-align'
+" Plug 'junegunn/vim-easy-align'
 
-xmap ea <Plug>(EasyAlign)
-nmap ea <Plug>(EasyAlign)
+" xmap ea <Plug>(EasyAlign)
+" nmap ea <Plug>(EasyAlign)
