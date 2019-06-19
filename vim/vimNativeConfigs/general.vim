@@ -5,6 +5,7 @@ augroup Reload_vimrc
 augroup END
 
 " Show relative numbers with numberWidth = 5
+set number
 set relativenumber
 set numberwidth=5
 
