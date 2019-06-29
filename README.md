@@ -102,10 +102,9 @@ sudo update-alternatives --config editor
 ```
 sudo apt-get install tmux
 ```
-- Add tmux config
+- Add tmux config symlink
 ```
-cp ~/devmachine/.tmux.conf ~/.tmux.conf
-source ~/.tmux.conf
+ln -s ~/rdm-setup/.tmux.conf ~/.tmux.conf
 ```
 
 **That's it !**
