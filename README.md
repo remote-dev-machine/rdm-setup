@@ -82,12 +82,14 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ### Setup vimrc
 - Fetch the latest vimrc from devmachine repo
 ```
-git clone git@github.com:nishantdania/devmachine.git
+git clone git@github.com:remote-dev-machine/rdm-setup.git
 ```
-- Replace existing vimrc with this custom one
+- Setup symbolic links to the new vimrc and vim plugins
 ```
-cp ~/devmachine/.vimrc ~/.vimrc
-source ~/.vimrc
+mkdir ~/.vim
+ln -s ~/rdm-setup/vim/.vimrc ~/.vimrc
+ln -s ~/rdm-setup/vim/pluginConfigs ~/.vim/pluginConfigs
+ln -s ~/rdm-setup/vim/vimNativeConfigs ~/.vim/vimNativeConfigs
 ```
 - Make Vim the default editor
 ```
