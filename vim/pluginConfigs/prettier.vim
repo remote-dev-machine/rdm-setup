@@ -12,3 +12,9 @@ let g:prettier#config#single_quote = 'true'
 " none|es5|all
 " " Prettier default: none
 let g:prettier#config#trailing_comma = 'all'
+
+" Running before saving, changing text or leaving insert mode:
+"
+" when running at every change you may want to disable quickfix
+let g:prettier#quickfix_enabled = 0
+autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
