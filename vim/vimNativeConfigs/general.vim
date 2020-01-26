@@ -43,3 +43,10 @@ nnoremap <silent> <leader>n :nohls<CR>
 " Page down and page up
 nnoremap <C-j> <C-f>
 nnoremap <C-k> <C-b>
+
+" Netrw settings
+nnoremap <leader>f :Vexplore<CR>
+let g:netrw_banner = 0
+let g:netrw_winsize = 25
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
