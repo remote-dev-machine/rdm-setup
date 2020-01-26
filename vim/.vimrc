@@ -20,6 +20,8 @@ function! s:SourceConfigFilesFrom(directory)
 	endfor
 endfunction
 
+set omnifunc=syntaxcomplete#Complete
+
 " Auto install Plug
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -31,6 +33,7 @@ endif
 " Load plugins with configs
 call plug#begin('~/.vim/plugged')
 call s:SourceConfigFilesFrom('pluginConfigs')
+Plug 'elixir-editors/vim-elixir'
 call plug#end()
 
 " Load config for native vim commands
