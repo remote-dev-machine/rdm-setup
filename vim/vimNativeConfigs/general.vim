@@ -15,9 +15,6 @@ inoremap kj <Esc>
 vnoremap jk <Esc>
 vnoremap kj <Esc>
 
-" Escape command mode
-cnoremap <leader>a <C-c>
-
 "Easier way to enter command mode
 nnoremap <leader>; :
 
