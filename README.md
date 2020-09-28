@@ -2,9 +2,12 @@
 Steps to setup a remote dev environment to code on the go.
 
 ## Pre-requisites
-- A remote server setup like AWS EC2 running on Linux. The following steps were created for a Ubuntu based system.
+- A remote server setup like AWS EC2 running on Linux
+- For Mac, install brew via 
+  `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
+- For Mac, instal wget by `brew install wget`
 
-## Basic housekeeping
+## Basic housekeeping (Linux)
 - Login as the root user
 - Add a new user with sudo privileges
 - Change hostname in remote machine to something easy to remember (e.g. DevMachine)
@@ -16,11 +19,11 @@ Steps to setup a remote dev environment to code on the go.
 sudo apt-get install mosh
 # brew install mosh
 ```
-- Update firewall on remote server to accept UDP connection from Mosh
+- Update firewall on remote server to accept UDP connection from Mosh (Linux)
 ```
 sudo ufw allow 60000:61000/udp
 ```
-- If there is a locale error, use this on remote server
+- If there is a locale error, use this on remote server (Linux)
 ```
 sudo apt-get update
 sudo apt-get install -y locales
@@ -29,9 +32,10 @@ sudo update-locale LC_ALL="en_US.UTF-8"
 ```
 
 ## Setup ZSH shell
-- Install ZSH
+- Install ZSH (Linux)
 ```
 sudo apt-get install zsh
+# brew install zsh
 ```
 - Copy the path to the installation. The path can be found using:
 ```
@@ -39,7 +43,7 @@ which zsh
 ```
 - Make ZSH the default shell
 ```
-chsh -s path/to/zsh/installation
+chsh -s /usr/local/bin/zsh
 ```
 
 ## Setup Oh-my-ZSH
@@ -64,11 +68,12 @@ git config --global user.name "nishantdania"
 ## Setup Vim Editor
 
 ### Setup Ack for search
-- Install Ack-grep
+- Install Ack-grep (Linux)
 ```
 sudo apt-get install ack-grep
+# brew install ack
 ```
-- Rename ack-grep to ack
+- Rename ack-grep to ack (Linux)
 ```
 sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
 ```
@@ -91,7 +96,7 @@ ln -s ~/rdm-setup/vim/.vimrc ~/.vimrc
 ln -s ~/rdm-setup/vim/pluginConfigs ~/.vim/pluginConfigs
 ln -s ~/rdm-setup/vim/vimNativeConfigs ~/.vim/vimNativeConfigs
 ```
-- Make Vim the default editor
+- Make Vim the default editor (Linux)
 ```
 sudo update-alternatives --config editor
 ```
@@ -101,10 +106,15 @@ sudo update-alternatives --config editor
 - Install tmux
 ```
 sudo apt-get install tmux
+# brew install tmux
 ```
 - Add tmux config symlink
 ```
 ln -s ~/rdm-setup/.tmux.conf ~/.tmux.conf
+```
+- Install tmuxinator
+```
+brew install tmuxinator
 ```
 
 **That's it !**
