@@ -114,7 +114,8 @@ ln -s ~/rdm-setup/.tmux.conf ~/.tmux.conf
 ```
 - Install tmuxinator
 ```
-brew install tmuxinator
+sudo apt-get install -y tmuxinator
+# brew install tmuxinator
 ```
 
 **That's it !**
