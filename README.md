@@ -93,6 +93,7 @@ git clone git@github.com:remote-dev-machine/rdm-setup.git
 ```
 mkdir ~/.vim
 ln -s ~/rdm-setup/.vimrc ~/.vimrc
+cp ~/rdm-setup/coc-settings.json ~/.vim/coc-settings.json
 ```
 - Make Vim the default editor (Linux)
 ```
