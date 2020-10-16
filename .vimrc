@@ -16,8 +16,8 @@ syntax on
 
 " Auto source vim files on save
 augroup Reload_vimrc
-	autocmd!
-	autocmd BufWritePost *.vim* source $MYVIMRC | echom "Reloaded vim file..."
+autocmd!
+autocmd BufWritePost *.vim* source $MYVIMRC | echom "Reloaded vim file..."
 augroup END
 
 " Show relative numbers with numberWidth = 5
@@ -76,27 +76,26 @@ endif
 " Load plugins
 call plug#begin('~/.vim/plugged')
   Plug 'mileszs/ack.vim'
-  Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'morhetz/gruvbox', { 'as': 'gruvbox' }
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-surround'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-  Plug 'tpope/vim-surround'
   Plug 'joukevandermaas/vim-ember-hbs'
+  Plug 'vim-airline/vim-airline'
 call plug#end()
 
 " ----------------------------------------------------------------------
 " PLUGIN CONFIGS
 " ----------------------------------------------------------------------
 
-" Dracula
+" Gruvbox
 " Set color themes
-let g:dracula_italic = 0
-colorscheme dracula
-" Fix as described in
-" https://github.com/dracula/vim/issues/65#issuecomment-377496609
-highlight Normal ctermbg=None
+set background=dark
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
 
 " ----------------------------------------------------------------------
 " MAPPINGS
@@ -105,7 +104,7 @@ highlight Normal ctermbg=None
 " Toggle between current and previous buffers
 " nnoremap <leader>b :b#<CR>
 
-" Escape out of insert and visual mode with jk or kj 
+" Escape out of insert and visual mode with jk or kj
 inoremap jk <Esc>
 inoremap kj <Esc>
 vnoremap jk <Esc>
@@ -141,7 +140,7 @@ nnoremap <leader>h <C-w>h
 nnoremap <leader>l <C-w>l
 
 " Resize splits easily
-nnoremap <S-j> mm :resize +2<CR>`mh 
+nnoremap <S-j> mm :resize +2<CR>`mh
 nnoremap <S-k> mm :resize -2<CR>`m
 nnoremap <S-l> mm :vertical resize -2<CR>`m
 nnoremap <S-h> mm :vertical resize +2<CR>`m
@@ -151,7 +150,7 @@ nnoremap <leader>\ :vsp<CR>
 nnoremap <leader>- :sp<CR>
 
 " Close other splits
-nnoremap <leader>o :only<CR> 
+nnoremap <leader>o :only<CR>
 
 " Ack find
 nnoremap <C-f> :Ack<space>
