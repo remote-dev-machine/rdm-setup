@@ -5,14 +5,17 @@
 " Specify that we will use Vim and not vi
 set nocompatible
 
+" Set hidden for buffers
+set hidden
+
 " Set a global <Leader>
 let mapleader = "\<Space>"
 
-" Omnifunc autocomplete
-set omnifunc=syntaxcomplete#Complete
-
 " Turn on syntax highlight
 syntax on
+
+" Always show sign column for any errors
+set signcolumn=yes
 
 " Auto source vim files on save
 augroup Reload_vimrc
@@ -23,7 +26,6 @@ augroup END
 " Show relative numbers with numberWidth = 5
 set number
 set relativenumber
-set numberwidth=5
 
 " Soft tabs
 set tabstop=2
@@ -65,6 +67,8 @@ autocmd VimResized * :wincmd =
 " PLUGINS
 " ----------------------------------------------------------------------
 
+" Install
+" ----------------------------------------------------------------------
 " Auto install Plug
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -73,7 +77,17 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" Resets for plugins
+" ----------------------------------------------------------------------
+" Ale
+" Use Coc for lsp
+let g:ale_disable_lsp = 1
+" Enable airline for diagnostics
+let g:airline#extensions#ale#enabled = 1
+
+
 " Load plugins
+" ----------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
   Plug 'mileszs/ack.vim'
   Plug 'morhetz/gruvbox', { 'as': 'gruvbox' }
@@ -85,6 +99,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'joukevandermaas/vim-ember-hbs'
   Plug 'vim-airline/vim-airline'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'dense-analysis/ale'
 call plug#end()
 
 " ----------------------------------------------------------------------
@@ -92,10 +108,49 @@ call plug#end()
 " ----------------------------------------------------------------------
 
 " Gruvbox
+" ----------------------------------------------------------------------
 " Set color themes
 set background=dark
 let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_sign_column='bg0'
 colorscheme gruvbox
+
+" coc.nvim
+" ----------------------------------------------------------------------
+" Install Extensions
+" :CocInstall coc-json coc-css coc-elixir coc-ember coc-eslint coc-html coc-stylelint coc-solargraph coc-tsserver coc-yaml coc-vimlsp
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=500
+
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Ale
+" ----------------------------------------------------------------------
+" Always on diagnostics sign in gutter
+let g:ale_sign_column_always = 1
+
+" Signs for ale
+let g:ale_sign_error = '‣'
+let g:ale_sign_warning = '‣'
+
+" Disable all highlights since they add clutter
+let g:ale_set_highlights = 0
 
 " ----------------------------------------------------------------------
 " MAPPINGS
