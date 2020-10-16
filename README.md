@@ -92,9 +92,7 @@ git clone git@github.com:remote-dev-machine/rdm-setup.git
 - Setup symbolic links to the new vimrc and vim plugins
 ```
 mkdir ~/.vim
-ln -s ~/rdm-setup/vim/.vimrc ~/.vimrc
-ln -s ~/rdm-setup/vim/pluginConfigs ~/.vim/pluginConfigs
-ln -s ~/rdm-setup/vim/vimNativeConfigs ~/.vim/vimNativeConfigs
+ln -s ~/rdm-setup/.vimrc ~/.vimrc
 ```
 - Make Vim the default editor (Linux)
 ```

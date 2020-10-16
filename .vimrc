@@ -11,13 +11,8 @@ let mapleader = "\<Space>"
 " Omnifunc autocomplete
 set omnifunc=syntaxcomplete#Complete
 
-" Set color themes
+" Turn on syntax highlight
 syntax on
-let g:dracula_italic = 0
-colorscheme dracula
-" Fix as described in
-" https://github.com/dracula/vim/issues/65#issuecomment-377496609
-highlight Normal ctermbg=None
 
 " Auto source vim files on save
 augroup Reload_vimrc
@@ -91,6 +86,17 @@ call plug#begin('~/.vim/plugged')
   Plug 'joukevandermaas/vim-ember-hbs'
 call plug#end()
 
+" ----------------------------------------------------------------------
+" PLUGIN CONFIGS
+" ----------------------------------------------------------------------
+
+" Dracula
+" Set color themes
+let g:dracula_italic = 0
+colorscheme dracula
+" Fix as described in
+" https://github.com/dracula/vim/issues/65#issuecomment-377496609
+highlight Normal ctermbg=None
 
 " ----------------------------------------------------------------------
 " MAPPINGS
