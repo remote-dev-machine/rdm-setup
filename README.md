@@ -67,15 +67,11 @@ git config --global user.name "nishantdania"
 
 ## Setup Vim Editor
 
-### Setup Ack for search
-- Install Ack-grep (Linux)
+### Setup Rg for search
+- Install Ripgrep (Linux)
 ```
-sudo apt-get install ack-grep
-# brew install ack
-```
-- Rename ack-grep to ack (Linux)
-```
-sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
+sudo apt-get install ripgrep
+# brew install ripgrep
 ```
 
 ### Setup fzf for fuzzy find
