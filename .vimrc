@@ -233,3 +233,19 @@ nnoremap <C-f> :Rg<space>
 
 " FZF fuzzy find files
 nnoremap <leader><leader> :FZF<CR>
+
+" Git status using fugitive
+nnoremap gs :Git<CR>
+
+" Git blame using fugitive
+nnoremap gb :Git blame<CR>
+
+" Git diff in split using fugitive
+nnoremap gd :Gdiffsplit<CR>
+
+" Git log using fugitive
+nnoremap gl :Git log<CR>
+
+" Git browse to open github
+nnoremap gh :Gbrowse<CR>
+vnoremap gh :Gbrowse<CR>
