@@ -102,6 +102,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'dense-analysis/ale'
   Plug 'jiangmiao/auto-pairs'
   Plug 'airblade/vim-gitgutter'
+  Plug 'tpope/vim-rhubarb'
 call plug#end()
 
 " ----------------------------------------------------------------------

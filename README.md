@@ -67,6 +67,13 @@ git config --global user.name "nishantdania"
 
 ## Setup Vim Editor
 
+### Setup Fugitive Browse handler
+- [Generate access token](https://github.com/settings/tokens/new)
+- Setup login credentials
+```
+echo 'machine api.github.com login <user> password <token>' >> ~/.netrc
+```
+
 ### Setup Rg for search
 - Install Ripgrep (Linux)
 ```
