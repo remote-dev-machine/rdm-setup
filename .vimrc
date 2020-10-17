@@ -163,9 +163,6 @@ endfunction
 
 " Ale
 " ----------------------------------------------------------------------
-" Always on diagnostics sign in gutter
-let g:ale_sign_column_always = 1
-
 " Signs for ale
 let g:ale_sign_error = '‣'
 let g:ale_sign_warning = '‣'
@@ -176,9 +173,6 @@ let g:ale_set_highlights = 0
 " ----------------------------------------------------------------------
 " MAPPINGS
 " ----------------------------------------------------------------------
-
-" Toggle between current and previous buffers
-" nnoremap <leader>b :b#<CR>
 
 " Escape out of insert and visual mode with jk or kj
 inoremap jk <Esc>
@@ -216,10 +210,10 @@ nnoremap <leader>h <C-w>h
 nnoremap <leader>l <C-w>l
 
 " Resize splits easily
-nnoremap <S-j> mm :resize +2<CR>`mh
-nnoremap <S-k> mm :resize -2<CR>`m
-nnoremap <S-l> mm :vertical resize -2<CR>`m
-nnoremap <S-h> mm :vertical resize +2<CR>`m
+nnoremap <S-j> mm :resize +10<CR>`mh
+nnoremap <S-k> mm :resize -10<CR>`m
+nnoremap <S-l> mm :vertical resize -10<CR>`m
+nnoremap <S-h> mm :vertical resize +10<CR>`m
 
 " Create new splits
 nnoremap <leader>\ :vsp<CR>
