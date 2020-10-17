@@ -89,7 +89,6 @@ let g:airline#extensions#ale#enabled = 1
 " Load plugins
 " ----------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
-  Plug 'mileszs/ack.vim'
   Plug 'morhetz/gruvbox', { 'as': 'gruvbox' }
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
@@ -116,6 +115,24 @@ set background=dark
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_sign_column='bg0'
 colorscheme gruvbox
+
+" Ripgrep via FZF
+" ----------------------------------------------------------------------
+" CTRL-A CTRL-Q to select all and build quickfix list
+" https://github.com/junegunn/fzf.vim/issues/185#issuecomment-322120216
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 
 " coc.nvim
 " ----------------------------------------------------------------------
@@ -209,8 +226,8 @@ nnoremap <leader>- :sp<CR>
 " Close other splits
 nnoremap <leader>o :only<CR>
 
-" Ack find
-nnoremap <C-f> :Ack<space>
+" Ripgrep find
+nnoremap <C-f> :Rg<space>
 
 " FZF fuzzy find files
 nnoremap <leader><leader> :FZF<CR>
