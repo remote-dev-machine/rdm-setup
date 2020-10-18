@@ -258,7 +258,7 @@ vnoremap <C-c> :w !pbcopy<CR>
 nnoremap <C-v> :r !pbpaste<CR>
 
 " Substitute across all quickfix files
-nnoremap <C-r> :cdo %s///ge \| update<C-b><Right><Right><Right><Right><Right><Right><Right>
+nnoremap <Leader>r :cdo %s///ge \| update<C-b><Right><Right><Right><Right><Right><Right><Right>
 
 " Create new tab
 nnoremap <C-t> :tabe TAB<CR>
