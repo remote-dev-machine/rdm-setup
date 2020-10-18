@@ -138,6 +138,11 @@ let g:fzf_action = {
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden -g "!.git"'
 
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   "rg --hidden -g \'!*.git\' --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+
 " coc.nvim
 " ----------------------------------------------------------------------
 " Install Extensions
