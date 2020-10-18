@@ -33,6 +33,9 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
+" Auto change local working directory
+autocmd BufEnter * silent! lcd %:p:h
+
 " Netrw settings
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
