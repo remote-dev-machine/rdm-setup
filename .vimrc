@@ -184,10 +184,10 @@ vnoremap kj <Esc>
 nnoremap <leader>; :
 
 " Stop using arrow keys
-nnoremap <Left> <nop>
-nnoremap <Right> <nop>
-nnoremap <Up> <nop>
-nnoremap <Down> <nop>
+nnoremap <Left> :echo "No arrow keys"<CR>
+nnoremap <Right> :echo "No arrow keys"<CR>
+nnoremap <Up> :echo "No arrow keys"<CR>
+nnoremap <Down> :echo "No arrow keys"<CR>
 
 " Easier way to save and quit
 nnoremap <leader>w :w<CR>
@@ -249,3 +249,6 @@ vnoremap <C-c> :w !pbcopy<CR>
 
 " Paste text from clipboard
 nnoremap <C-v> :r !pbpaste<CR>
+
+" Substitute across all quickfix files
+nnoremap <C-r> :cdo %s///ge \| update<C-b><Right><Right><Right><Right><Right><Right><Right>
