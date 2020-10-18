@@ -243,3 +243,9 @@ nnoremap gl :Git log<CR>
 " Git browse to open github
 nnoremap gh :Gbrowse<CR>
 vnoremap gh :Gbrowse<CR>
+
+" Copy visually selected text
+vnoremap <C-c> :w !pbcopy<CR>
+
+" Paste text from clipboard
+nnoremap <C-v> :r !pbpaste<CR>
