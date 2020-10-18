@@ -271,7 +271,7 @@ nnoremap <C-t> :tabe TAB<CR>
 nnoremap <C-w> :tabc<CR>
 
 " Mappings for tmux navigation with vim
-nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <leader>h :TmuxNavigateLeft<cr>
 nnoremap <silent> <leader>j :TmuxNavigateDown<cr>
 nnoremap <silent> <leader>k :TmuxNavigateUp<cr>
-nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <leader>l :TmuxNavigateRight<cr>
