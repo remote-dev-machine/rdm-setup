@@ -88,7 +88,6 @@ let g:ale_disable_lsp = 1
 " Enable airline for diagnostics
 let g:airline#extensions#ale#enabled = 1
 
-
 " Load plugins
 " ----------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
