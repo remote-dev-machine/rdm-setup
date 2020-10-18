@@ -105,11 +105,15 @@ call plug#begin('~/.vim/plugged')
   Plug 'jiangmiao/auto-pairs'
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-rhubarb'
+  Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " ----------------------------------------------------------------------
 " PLUGIN CONFIGS
 " ----------------------------------------------------------------------
+
+" Tmux navigation
+let g:tmux_navigator_no_mappings = 1
 
 " Gruvbox
 " ----------------------------------------------------------------------
@@ -265,3 +269,9 @@ nnoremap <C-t> :tabe TAB<CR>
 
 " Delete tab
 nnoremap <C-w> :tabc<CR>
+
+" Mappings for tmux navigation with vim
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <leader>j :TmuxNavigateDown<cr>
+nnoremap <silent> <leader>k :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
