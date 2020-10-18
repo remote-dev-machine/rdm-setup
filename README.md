@@ -67,6 +67,9 @@ git config --global user.name "nishantdania"
 
 ## Setup Vim Editor
 
+### Screenshot
+![Vim](https://user-images.githubusercontent.com/1717441/96362662-748f9980-1161-11eb-9c01-aceedec23065.png)
+
 ### Setup Fugitive Browse handler
 - [Generate access token](https://github.com/settings/tokens/new)
 - Setup login credentials
