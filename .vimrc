@@ -146,9 +146,6 @@ command! -bang -nargs=* Rg
 
 " coc.nvim
 " ----------------------------------------------------------------------
-" Install Extensions
-" :CocInstall coc-json coc-css coc-elixir coc-ember coc-eslint coc-html coc-stylelint coc-solargraph coc-tsserver coc-yaml coc-vimlsp
-
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
