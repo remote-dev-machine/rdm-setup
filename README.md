@@ -70,11 +70,16 @@ git config --global user.name "nishantdania"
 ### Screenshot
 ![Vim](https://user-images.githubusercontent.com/1717441/96362662-748f9980-1161-11eb-9c01-aceedec23065.png)
 
-### Setup Fugitive Browse handler
+### Setup Fugitive Browse handler to open github files/commits in browser from vim
 - [Generate access token](https://github.com/settings/tokens/new)
 - Setup login credentials
 ```
 echo 'machine api.github.com login <user> password <token>' >> ~/.netrc
+```
+
+### Setup solargraph for ruby intellisense
+```
+gem install solargraph
 ```
 
 ### Setup Rg for search
@@ -90,6 +95,7 @@ sudo apt-get install ripgrep
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
+
 ### Setup vimrc
 - Fetch the latest vimrc from devmachine repo
 ```
@@ -106,6 +112,12 @@ cp ~/rdm-setup/coc-settings.json ~/.vim/coc-settings.json
 sudo update-alternatives --config editor
 ```
 - Install new plugins >> Open vim using `vi`. It should start downloading the required packages. If it does not, using `:PlugInstall`
+
+### Setup coc.nvim extensions for intellisense
+- Run the following command in vim
+```
+:CocInstall coc-json coc-css coc-elixir coc-ember coc-eslint coc-html coc-stylelint coc-solargraph coc-tsserver coc-yaml coc-vimlsp
+```
 
 ## Setup tmux
 - Install tmux
