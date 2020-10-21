@@ -240,7 +240,7 @@ nnoremap gs :Git<CR>
 nnoremap gb :Git blame<CR>
 
 " Git diff in split using fugitive
-nnoremap gd :Gdiffsplit<CR>
+nnoremap gd :Gdiff<CR>
 
 " Git log using fugitive
 nnoremap gl :Git log<CR>
