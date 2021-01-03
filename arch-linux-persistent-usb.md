@@ -322,6 +322,8 @@ Linux isn't meant to be used with root-user privileges all the time. Enable sudo
 |# echo 'user ALL=(ALL) ALL' > /etc/sudoers.d/10-user  |
 +------------------------------------------------------+
 
++ See the network manager section below before logging out of chroot
+
 logout
 ------
 Exit of the chroot:
@@ -332,6 +334,28 @@ Unmount the USB:
 +-----------------------------------------+
 |# umount /mnt/usb/boot /mnt/usb && sync  |
 +-----------------------------------------+
+```
 
-Installation Complete!
+Add Networking:
+```
+Install network manager:
++-----------------------------+
+|# pacman -S networkmanager   |
++-----------------------------+
+
+Start network manager service:
++-----------------------------------+
+|# systemctl start networkmanager   |
++-----------------------------------+
+
+Enable network manager service:
++-----------------------------------+
+|# systemctl enable networkmanager  |
++-----------------------------------+
+
+Connect to a wifi network using TUI:
++---------+
+|# nmtui  |
++---------+
+
 ```
