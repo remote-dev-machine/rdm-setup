@@ -366,9 +366,9 @@ Connect to a wifi network using TUI:
 Mount the USB in a virtual machine running arch linux and arch-chroot in it.
 
 Install basic stuff like xorg for GUI:
-+-----------------------------------------------------+
-|# pacman -S git firefox xorg xorg-server xorg-xinit  |
-+-----------------------------------------------------+
++-------------------------------------------------------------+
+|# pacman -Sy git firefox xorg xorg-server xorg-xinit openssh |
++-------------------------------------------------------------+
 
 Install DWM as a window manager:
 +----------------------------------------+
