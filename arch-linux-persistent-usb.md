@@ -280,10 +280,10 @@ Generate a GRUB configuration:
 video drivers
 -------------
 To support most common GPUs, install all five basic open source video drivers:
-+----------------------------------------------------------+
-|# pacman -S xf86-video-amdgpu xf86-video-ati \            |
-|:    xf86-video-intel xf86-video-nouveau xf86-video-vesa  |
-+----------------------------------------------------------+
++---------------------------------------------------------------------------+
+|# pacman -S xf86-video-amdgpu xf86-video-ati \                             |
+|:    xf86-video-intel xf86-video-nouveau xf86-video-vesa xf85-video-fbdev  |
++---------------------------------------------------------------------------+
 
 touchpad support
 ----------------
@@ -394,7 +394,7 @@ Copy .xinitrc configuration to open DWM:
 
 Remove last 5 lines from .xinitrc related to TWM and xterm and replace with the following:
 +------------+
-|exec dwm &  |
+|exec dwm    |
 +------------+
 
 Using startx command to run X server should now open DWM.
