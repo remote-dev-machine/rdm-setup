@@ -359,3 +359,43 @@ Connect to a wifi network using TUI:
 +---------+
 
 ```
+
+## Post basic installation setup
+
+```
+Mount the USB in a virtual machine running arch linux and arch-chroot in it.
+
+Install basic stuff like xorg for GUI:
++-----------------------------------------------------+
+|# pacman -S git firefox xorg xorg-server xorg-xinit  |
++-----------------------------------------------------+
+
+Install DWM as a window manager:
++----------------------------------------+
+|# cd ~                                  |
+|# git clone git://git.suckless.org/dwm  |
+|# cd dwm                                |
+|# make clean install                    |
++----------------------------------------+
+
+Install st as a terminal emulator:
++----------------------------------------+
+|# cd ~                                  |
+|# git clone git://git.suckless.org/st   |
+|# cd st                                 |
+|# make clean install                    |
++----------------------------------------+
+
+Copy .xinitrc configuration to open DWM:
++----------------------------------------+
+|# cd ~                                  |
+|# cp /etc/X11/xinit/xinitrc ~/.xinitrc  |
++----------------------------------------+
+
+Remove last 5 lines from .xinitrc related to TWM and xterm and replace with the following:
++------------+
+|exec dwm &  |
++------------+
+
+Using startx command to run X server should now open DWM.
+```
