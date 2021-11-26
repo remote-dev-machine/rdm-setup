@@ -116,7 +116,7 @@ sudo update-alternatives --config editor
 ### Setup coc.nvim extensions for intellisense
 - Run the following command in vim
 ```
-:CocInstall coc-json coc-css coc-elixir coc-ember coc-eslint coc-html coc-stylelint coc-solargraph coc-tsserver coc-yaml coc-vimlsp
+:CocInstall coc-json coc-css coc-elixir coc-ember coc-eslint coc-html coc-stylelint coc-solargraph coc-tsserver coc-yaml coc-vimlsp coc-kotlin coc-java coc-xml coc-sql coc-sh coc-graphql
 ```
 
 ## Setup tmux
