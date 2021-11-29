@@ -103,6 +103,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-rhubarb'
   Plug 'christoomey/vim-tmux-navigator'
+  Plug 'udalov/kotlin-vim'
+  Plug 'martinda/Jenkinsfile-vim-syntax'
+  Plug 'peitalin/vim-jsx-typescript'
+  Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 " ----------------------------------------------------------------------
